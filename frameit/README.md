@@ -53,6 +53,15 @@ Get in contact with the developer on Twitter: [@FastlaneTools](https://twitter.c
 -------
 <h5 align="center"><code>frameit</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
+# How to run custom frameit
+
+Quizlet style: color background, device shadow, and title
+- Android support depends on changes in `deliver`. Depdencies are run in production mode (fastlane ruby gem) by default, but we want to run `deliver` in our own fastlane repo. In `frameit/bin/frameit`, add this line below the file path push. This tells `frameit` runner to run local `deliver`.
+```
+$:.push "path_to_your_fastlane_repo/fastlane/deliver/lib"
+```
+- In your directory, make sure the following files exist: `Framefile.json`, `background.jpg` for base color background image (hacky stuff to be refactored), fonts for all languages in `fonts` directory. Each language directory must contain a `title.strings` with a map of file path keyword to title string. `Framefile.json` specifies language specific fonts.
+- Run ```path_to_your_fastlane_repo/fastlane/frameit/bin/frameit custom --platform Android``` for Android, and just ```path_to_your_fastlane_repo/fastlane/frameit/bin/frameit custom``` for iOS.
 
 # Features
 
