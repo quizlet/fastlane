@@ -4,6 +4,7 @@ module Frameit
     SILVER = "Silver"
     ROSE_GOLD = "Rose Gold"
     GOLD = "Gold"
+    CUSTOM = "Custom"
   end
 
   module Orientation

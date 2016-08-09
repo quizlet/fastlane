@@ -91,6 +91,16 @@ module Frameit
         end
       end
 
+      command :custom do |c|
+        c.syntax = 'custom frame'
+        c.description = "Custom device frame around all screenshots."
+
+        c.action do |args, options|
+          load_config(options)
+          Frameit::Runner.new.run('.', Frameit::Color::CUSTOM)
+        end
+      end
+
       alias_command :white, :silver
 
       run!
