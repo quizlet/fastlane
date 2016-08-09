@@ -14,7 +14,8 @@ module Frameit
       @path = path
       @size = FastImage.size(path)
 
-      @screen_size = ENV["FRAMEIT_FORCE_DEVICE_TYPE"] || Deliver::AppScreenshot.calculate_screen_size(path)
+      @screen_size = ENV["FRAMEIT_FORCE_DEVICE_TYPE"] || Deliver::AppScreenshot.calculate_screen_size(path, Deliver::AppScreenshot::Platform::ANDROID)
+      UI.message "Screen size '#{@screen_size}'" if $verbose
     end
 
     # Device name for a given screen size. Used to use the correct template
@@ -35,6 +36,10 @@ module Frameit
         return 'iPad Pro'
       when sizes::MAC
         return 'MacBook'
+      when sizes::ANDROID_NEXUS_5X
+        return 'Android-Nexus-5X'
+      when sizes::ANDROID_NEXUS_7
+        return 'Android-Nexus-7'
       else
         UI.error "Unknown device type for size #{@screen_size} for path '#{path}'"
       end

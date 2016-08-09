@@ -426,7 +426,7 @@ module Frameit
     def title_number_of_lines(screenshot)
       size = Deliver::AppScreenshot::ScreenSize
       case screenshot.screen_size
-      when size::IOS_55, size::IOS_47, size::IOS_40, size::IOS_35, size::IOS_IPAD, size::ANDROID_NEXUS_5X, size::ANDROID_NEXUS_7, size::ANDROID_NEXUS_10
+      when size::IOS_55, size::IOS_47, size::IOS_40, size::IOS_35, size::IOS_IPAD, size::ANDROID_NEXUS_5X, size::ANDROID_NEXUS_7
         return 2
       when size::IOS_IPAD_PRO
         return 1

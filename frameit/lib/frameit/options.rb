@@ -35,11 +35,16 @@ module Frameit
                            is_string: false,
                            description: "use iPhone 5s instead of iPhone SE frames",
                            default_value: false),
-        FastlaneCore::ConfigItem.new(key: :use_legacy_iphone6s,
-                           env_name: "FRAMEIT_USE_LEGACY_IPHONE_6_S",
-                           is_string: false,
-                           description: "Use iPhone 6s frames instead of iPhone 7 frames",
-                           default_value: false)
+        FastlaneCore::ConfigItem.new(key: :platform,
+                           env_name: "FRAMEIT_PLATFORM",
+                           optional: true,
+                           description: "platform for screenshot",
+                           verify_block: proc do |value|
+                             available = ['Apple', 'Android']
+                             unless available.include? value
+                               UI.user_error!("Invalid screenshot platform '#{value}'. Available values: #{available}")
+                             end
+                           end)
       ]
     end
   end
