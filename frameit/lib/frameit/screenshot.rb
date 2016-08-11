@@ -40,6 +40,8 @@ module Frameit
         return 'Android-Nexus-5X'
       when sizes::ANDROID_NEXUS_7
         return 'Android-Nexus-7'
+      when sizes::ANDROID_NEXUS_10
+        return 'Android-Nexus-10'
       else
         UI.error "Unknown device type for size #{@screen_size} for path '#{path}'"
       end

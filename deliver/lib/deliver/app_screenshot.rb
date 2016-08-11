@@ -37,6 +37,8 @@ module Deliver
       ANDROID_NEXUS_5X = "Android-Nexus-5X"
       # Android Nexus 7
       ANDROID_NEXUS_7 = "Android-Nexus-7"
+      #Android Nexus 10
+      ANDROID_NEXUS_10 = "Android-Nexus-10"
     end
 
     module Platform
@@ -86,7 +88,8 @@ module Deliver
         ScreenSize::IOS_APPLE_WATCH => "watch",
         ScreenSize::APPLE_TV => "appleTV",
         ScreenSize::ANDROID_NEXUS_5X => "androidNexus5X",
-        ScreenSize::ANDROID_NEXUS_7 => "Android Nexus 7"
+        ScreenSize::ANDROID_NEXUS_7 => "androidNexus7",
+        ScreenSize::ANDROID_NEXUS_10 => "androidNexus10"
       }
       return matching[self.screen_size]
     end
@@ -110,7 +113,8 @@ module Deliver
         ScreenSize::APPLE_TV => "Apple TV",
         # Android.
         ScreenSize::ANDROID_NEXUS_5X => "Android Nexus 5X",
-        ScreenSize::ANDROID_NEXUS_7 => "Android Nexus 7"
+        ScreenSize::ANDROID_NEXUS_7 => "Android Nexus 7",
+        ScreenSize::ANDROID_NEXUS_10 => "Android Nexus 10"
       }
       return matching[self.screen_size]
     end
@@ -178,6 +182,9 @@ module Deliver
         # Older devices.
         ScreenSize::ANDROID_NEXUS_7 => [
           [1200, 1920]
+        ],
+        ScreenSize::ANDROID_NEXUS_10 => [
+          [1600, 2560]
         ]
       }
     end

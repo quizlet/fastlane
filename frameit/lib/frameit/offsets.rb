@@ -5,7 +5,7 @@ module Frameit
       case screenshot.orientation_name
       when Orientation::PORTRAIT
         case screenshot.screen_size
-        when size::IOS_55, size::ANDROID_NEXUS_5X
+        when size::IOS_55, size::ANDROID_NEXUS_5X, size::ANDROID_NEXUS_7, size::ANDROID_NEXUS_10
           return 0.2
         when size::IOS_47
           return 0.2
@@ -17,8 +17,6 @@ module Frameit
           return 0.2
         when size::IOS_IPAD_PRO
           return 0.15
-        when size::ANDROID_NEXUS_7
-          return 0.2
         end
       end
     end

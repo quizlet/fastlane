@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+$:.push File.expand_path("../../lib", __FILE__)
+$:.push "/Users/jaclyn/src/fastlane/deliver/lib"
+
+require 'frameit'
+require 'frameit/commands_generator'
+Frameit::CommandsGenerator.start
