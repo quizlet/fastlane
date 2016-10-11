@@ -184,7 +184,7 @@ module Deliver
           [1200, 1920]
         ],
         ScreenSize::ANDROID_NEXUS_10 => [
-          [1600, 2560]
+          [2560, 1600]
         ]
       }
     end
