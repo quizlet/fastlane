@@ -4,10 +4,6 @@ require 'fastimage'
 module Frameit
   class Runner
     def initialize
-      downloader = FrameDownloader.new
-      unless downloader.frames_exist?
-        downloader.download_frames
-      end
     end
 
     def run(path, color = nil)
