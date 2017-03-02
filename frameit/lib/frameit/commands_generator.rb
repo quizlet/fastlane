@@ -95,6 +95,8 @@ module Frameit
         c.syntax = 'custom frame'
         c.description = "Custom device frame around all screenshots."
 
+        FastlaneCore::CommanderGenerator.new.generate(Frameit::Options.available_options, command: c)
+
         c.action do |args, options|
           load_config(options)
           Frameit::Runner.new.run('.', Frameit::Color::CUSTOM)
