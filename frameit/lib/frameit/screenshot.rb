@@ -14,7 +14,7 @@ module Frameit
       @path = path
       @size = FastImage.size(path)
 
-      @screen_size = ENV["FRAMEIT_FORCE_DEVICE_TYPE"] || Deliver::AppScreenshot.calculate_screen_size(path, Deliver::AppScreenshot::Platform::ANDROID)
+      @screen_size = ENV["FRAMEIT_FORCE_DEVICE_TYPE"] || Deliver::AppScreenshot.calculate_screen_size(path, Frameit.config[:platform])
       UI.message "Screen size '#{@screen_size}'" if $verbose
     end
 
